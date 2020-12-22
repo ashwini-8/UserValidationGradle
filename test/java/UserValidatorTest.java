@@ -37,4 +37,33 @@ public class UserValidatorTest extends TestCase {
         boolean result = userValidator.validateFirstName("As");
         Assert.assertEquals(false, result);
     }
+
+    //LastName
+    @Test
+    public void givenLastName_WhenLastNameStartsWithCapitalLetter_ShouldReturn_True() {
+        UserValidator userValidator = new UserValidator();
+        boolean result = userValidator.validateLastName("Patil");
+        Assert.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenLastName_WhenLastNameNotStartsWithCapitalLetter_ShouldReturn_False() {
+        UserValidator userValidator = new UserValidator();
+        boolean result = userValidator.validateLastName("patil");
+        Assert.assertEquals(false, result);
+    }
+
+    @Test
+    public void givenLastName_WhenLastNameHaveMinimumThreeLetter_ShouldReturn_True() {
+        UserValidator userValidator = new UserValidator();
+        boolean result = userValidator.validateLastName("Pat");
+        Assert.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenLastName_WhenLastNameNotHaveMinimumThreeLetter_ShouldReturn_False() {
+        UserValidator userValidator = new UserValidator();
+        boolean result = userValidator.validateLastName("pa");
+        Assert.assertEquals(false, result);
+    }
 }

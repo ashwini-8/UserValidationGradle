@@ -7,4 +7,11 @@ public class UserValidator {
         Pattern pattern = Pattern.compile(NAME_PATTERN);
         return pattern.matcher(firstName).matches();
     }
+
+    public boolean validateLastName(String lastName) {
+        boolean Result = lastName.matches(NAME_PATTERN);
+        System.out.println("\nResult " + Result + "\nLast Name: " + lastName);
+        return Result;
+    }
+
 }
