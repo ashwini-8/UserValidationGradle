@@ -1,4 +1,8 @@
+import java.util.List;
 import java.util.regex.Pattern;
+
+import org.junit.Assert;
+
 
 public class UserValidator {
     private final String NAME_PATTERN = "^[A-Z]{1}[a-z]{2,}$";
@@ -31,5 +35,12 @@ public class UserValidator {
         Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
         return pattern.matcher(password).matches();
     }
+
+    public boolean validateMultipleEmail(String email)
+    {
+        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+        return pattern.matcher(email).matches();
+    }
+
 }
 
