@@ -188,39 +188,4 @@ public class UserValidatorTest extends TestCase {
         boolean result = userValidator.validatePassword("sdfkls123");
         Assert.assertEquals(false, result);
     }
-
-    //
-    @RunWith(Parameterized.class)
-    public static class MultipleEntryEmail {
-        String emailId;
-        boolean expected_Result;
-        private UserValidator emailVariable;
-        UserValidator formObject = new UserValidator();
-
-        public MultipleEntryEmail(String emailId, boolean expected_Result) {
-            this.emailId = emailId;
-            this.expected_Result = expected_Result;
-        }
-
-        @Before
-        public void initialize() {
-            emailVariable = new UserValidator();
-        }
-
-        @Parameterized.Parameters
-        public static Collection emails() {
-            return Arrays.asList(new Object[][]{
-                    {"ashwinip309@gmail.com", true},
-                    {"Abc@gmail.com", false},
-                    {"abc111@redix.com", true},
-                    {"Abc@gmail.akdh", false}
-            });
-        }
-
-        @Test
-        public void testEmailId() {
-            System.out.println("Parameterized email is " + emailId);
-            assertEquals(expected_Result, emailVariable.validateMultipleEmail(emailId));
-        }
-    }
 }

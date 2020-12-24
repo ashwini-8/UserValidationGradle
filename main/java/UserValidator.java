@@ -36,11 +36,5 @@ public class UserValidator {
         return pattern.matcher(password).matches();
     }
 
-    public boolean validateMultipleEmail(String email)
-    {
-        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
-        return pattern.matcher(email).matches();
-    }
-
 }
 
