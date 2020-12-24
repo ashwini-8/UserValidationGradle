@@ -182,10 +182,5 @@ public class UserValidatorTest extends TestCase {
         Assert.assertEquals(true, result);
     }
 
-    @Test
-    public void givenPassword_WhenPasswordNotHaveAtleastOneSpeacialCharacter_ShouldReturn_False() {
-        UserValidator userValidator = new UserValidator();
-        boolean result = userValidator.validatePassword("sdfkls123");
-        Assert.assertEquals(false, result);
-    }
+    
 }
