@@ -210,10 +210,10 @@ public class UserValidatorTest extends TestCase {
         @Parameterized.Parameters
         public static Collection emails() {
             return Arrays.asList(new Object[][]{
-                    {"ashwinigmail.com", false},
-                    {"Ashwinipatil@gmail.com", true},
-                    {"Ashwinipatil@gmail.co.in", true},
-                    {"Ashwinip309@gmail.com", true}
+                    {"ashwinip309@gmail.com", true},
+                    {"Abc@gmail.com", false},
+                    {"abc111@redix.com", true},
+                    {"Abc@gmail.akdh", false}
             });
         }
 
